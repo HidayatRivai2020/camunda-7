@@ -6,4 +6,13 @@
 	- JavaScript
 	- Rest API
 
-## Camunda 7 Using Java
+##  List Of Content
+- Camunda Java
+  - Installing Camunda
+  - Create a new BPMN Diagram
+  - Start with a Simple Process
+    - Changing Name
+    - Add Activity
+    - Change Object Type
+  - Configure the Service Task
+  - Configure Properties for Execution

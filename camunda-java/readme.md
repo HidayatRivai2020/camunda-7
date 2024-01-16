@@ -1,10 +1,10 @@
-# Installing Camunda
+# Camunda Java
+
+## Installing Camunda
 - Install <b>Java Runtime Environment 1.8+</b>
 - Install Camunda Platform
 - Install Camunda Modeler
 - Execute Camunda Modeler
-
-# [Executable Process](https://github.com/HidayatRivai2020/camunda-7/blob/main/payment.bpmn)
 
 ## Create a new BPMN Diagram
 - Click `File`
