@@ -1,6 +1,6 @@
-# Camunda Java
+# Camunda Java 7.20
 
-## Installing Camunda
+## Run Camunda
 - Install <b>Java Runtime Environment 1.8+</b>
 - Install Camunda Platform
 - Install Camunda Modeler
