@@ -1,4 +1,9 @@
-# Camunda Modeler
+# Camunda Java 7.21
+
+## Requirements
+- Java Runtime Environment 1.8+
+- Camunda Platform
+- Camunda Modeler
 
 ## Taskbar
 
@@ -50,6 +55,13 @@
 - Click on object
 - Click the `Remove Object` button (Trash Can Icon Button)
 - Select the object type
+
+## Configure the Service Task
+- Open the properties panel
+- Click on the activity
+- Click `Implementation`
+- Change the `Type` to `External`
+- Add the `Topic`
 
 ### Configure Properties
 - Open the properties panel
