@@ -36,7 +36,7 @@
 - Application : Main Application
     - Cockpit : On-Going Task in Engine
     - Task-list : Complete Task List
-    - Admin
+    - Admin : Manage user and permissions
 - Profile : User Profile
 - Links : Documentation Link
 

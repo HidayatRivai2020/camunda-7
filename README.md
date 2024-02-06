@@ -1,20 +1,124 @@
+# List of Contents
+- Camunda
+    - Architecture
+        - Camunda Architecture
+        - Process Engine Architecture
+        - Architectural Options
+- QuickStart
+    - Download and Install Requirements
+    - Create BPMN 2.0 using camunda modeler
+    - Implement an external task worker
+        - Java
+        - JavaScript
+        - REST API
+    - Deploy the Process
+    - Involve Human
+    - Dynamic
+    - Decision Automation
+- Camunda BPMN Run
+  - Structure Files
+  - Run Camunda
+    - Camunda Welcome
+    - Deploy BPMN every run
+  - Cockpit
+    - Check deployed process
+  - Task-list
+    - Check process
+    - Start process
+- Camunda Modeler (7.13)
+  - Taskbar
+    - Run Camunda modeler
+    - Create a new BPMN Diagram
+    - Save the BPMN Diagram
+    - Deploy the BPMN Diagram
+  - Event & Activity
+    - Change Event Name
+    - Add Activity
+    - Change Object Type
+    - Remove Object
+    - Configure Properties
+- Camunda Modeler (7.21)
+  - BPM Notation
+  - Taskbar Action
+    - Run Camunda modeler
+    - Create a new BPMN Diagram
+    - Save the BPMN Diagram
+    - Deploy the BPMN Diagram
+  - Event & Activity Action
+    - Change Event Name
+    - Add Activity
+    - Change Object Type
+    - Remove Object
+    - Configure Properties
+
 # [Camunda 7](https://docs.camunda.org/manual/7.21/)
 - Light-weight and open-source platform for Business Process Management
-- Latest Version: 7.21
+- Latest Version : 7.21
 - Can Be Implemented Using:
-	- Java
-	- JavaScript
-	- Rest API
-
-## QuickStart
-- Download and Install Requirements
-- Create BPMN 2.0 using camunda modeler
-- Implement an external task worker
   - Java
   - JavaScript
-  - REST API
-- Deploy the Process
-- Involve Human
-- Dynamic
-- Decision Automation
+  - Rest API
+- Camunda BPM Standards 
+  - BPMN
+    - Business Process Model and Notation)
+    - standard for workflow and process automation
+    - Processes for completely automated service orchestration and human workflow management
+  - CMMN
+    - Case Management Model and Notation
+    - standard for Case Management
+    - Cases for less structured case management activities
+  - DMN : 
+    - Decision Model and Notation
+    - standard for Business Decision Management
+    - Decisions for execution decision tables for business rule automation
+- Architecture
+  - Camunda Architecture
+  - Process Engine Architecture
+  - Architectural Options
 
+## Architecture
+
+### Camunda architecture
+- Core Engine : The core of Camunda BPM
+- Application : Set of application to help modeling, execute, and administer process running on the Camunda core engine
+- Cycle : integrate third party BPMN modeler with Camunda BPM
+- Custom Application : New application that can integrate with Camunda BPM components
+- Design : Design the BPMN
+  - Camunda Modeler
+    - Dekstop Based Modeler
+  - Cawemo
+    - Web Based workflow designer
+    - Cloud Based Designer
+- Automate : Deploy the workflow into camunda engine
+  - Cockpit : Managing the workflow which has been deployed
+  - Tasklist : Interact with the workflow which has been deployed
+  - Workflow Engine : Deploy and execute the workflow
+  - Decision Engine : Deploy and execute the decision
+- Improve
+  - Optimize : Improve the project
+
+### Process Engine Architecture
+- Public API : Service Oriented API that allow JAVA Application to interact with process engine
+- Core engine : Process Virtual Machine that passed BPMN File into XML file into Java objects and set BPM implementation behavior
+- Job Executor : Asynchronous Background Work 
+- Persistence Layer : Process instance state to a relational database
+- Relational Databse : Database to store the data
+
+### Architectural Options
+- Embedded Process Engine
+  - Embed the Camunda engine entirely within your current application, preserving its current UX
+  - Added as an application library to custom application
+  - Can be started and stopped with the application lifecycle
+  - Possible to run multiple embedded process engines on top of shared database
+- Shared, Container managed Process Engine: 
+  - share a process engine or set a process engines among a set of process applications
+  - Started inside the runtime container
+  - provided as a container service and can be shared by all applications deployed inside the container
+- Standalone Process Engines 
+  - Standalone configuration that usually accepted calls via REST API
+  - provided as a network service
+  - different applications running on the network can interact with the process engine through a remote communication channel
+- Clustering Model
+  - Combination of different architectural option
+  - Can be distributed to different nodes in a cluster
+  - Connected to a shared database
