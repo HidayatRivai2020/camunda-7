@@ -69,3 +69,10 @@
 - Add the `Name`
 - Add the `ID`
 - Mark the process to be `Executable`
+
+### Hello World
+- Create an event
+- Select General
+- Script Format : Groovy
+- Script Type : Inline Script
+- Script : `println "Hello World"`

@@ -30,7 +30,7 @@
 - access url : localhost:8080/
 - access default index : http://localhost:8080/camunda-welcome/index.html
 
-### Default Index
+## Default Index
 - Login Page:
   - default user : Demo
   - default pass : Demo
@@ -44,7 +44,7 @@
 - Documentation : URL for offical documentation
 - Forum : Camunda Forum
 
-### Camunda Welcome
+## Camunda Welcome
 - Application : Main Application
   - Cockpit : On-Going Task in Engine
   - Task-list : Complete Task List
@@ -60,6 +60,36 @@
 - Run Camunda
 
 ## Cockpit
+- Processes : Process Definitions Deployed List
+- Decisions : Decision Definitions Deployed List
+- Human Task : Assignments
+  - Assignments by Type : assignment list by the type
+  - Assignments by group : assignment list by the group
+- More : More Link
+  - Deployments
+    - Sort : sort deployment
+    - Filter : filter deployment
+    - list item : filtered deployment
+    - file name : file from selected deployment
+    - detail : BPMN detail from deployment
+  - Batches
+    - In Progress Batches : Running Batches
+    - Ended Batches : Finished Batches
+- User : User with name
+  - My Profile : Open Welcome Page
+  - Sign Out : Sign Out from current session
+- Other Page : Link to go to another page
+  - Admin : Open admin page
+  - Cockpit : Open cockpit page
+- Right Now
+  - Running Process Instances
+  - Open Incidents
+  - Open Human Tasks
+- Deployed
+  - Process definitions
+  - Decision Definitions
+  - Case Definitions
+  - Deployments
 
 ### Check deployed process
 - Click **number** on Deployed or Click `Processes`
@@ -75,6 +105,25 @@
 - Other Page : Link to go to another page
   - Admin : Open admin page
   - Cockpit : Open cockpit page
+- Task Group
+  - Create a Filter : add a new filter for the task list title
+  - Task List Group : grouped task list by filter
+- Task List Item
+  - Sort : sort the task list items by order
+  - Filter Task : Show specific task list
+  - Item : filtered task list
+- Task : Selected Task from task list
+  - Title
+  - Detail
+  - Set follow-up date
+  - Set due date
+  - Add Groups
+  - Claim
+  - Form
+  - History
+  - Diagram
+  - Description
+  - Button
 
 ### Check process
 - Click `Add a simple filter`
@@ -94,3 +143,25 @@
 - Click `back` to go back
 - Click `close` to cancel process
 
+## Admin
+- Users
+  - Create New User
+  - List Of Users
+  - My Profile
+- Groups
+  - Create New Group
+  - List Of Groups
+- Tenants
+  - Create New Tenant
+  - List Of Tenats
+- Authorizations
+  - Manage Authorizations
+- System
+  - General
+  - Execution Metrics
+- User : User with name
+  - My Profile : Open Welcome Page
+  - Sign Out : Sign Out from current session
+- Other Page : Link to go to another page
+  - Admin : Open admin page
+  - Cockpit : Open cockpit page
