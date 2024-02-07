@@ -6,22 +6,54 @@
 - Camunda Modeler
 
 ## BPM Notation
-- Start Event : BPMN elements that initiate the execution of a process instance
-- None/End Event : BPMN elements that represent the termination or completion points of a business process.
+- Start Event 
+  - BPMN elements that initiate the execution of a process instance
+  - Starting point of a business process and define how the process will be triggered or activated
+- None/End Event
+  - BPMN elements that represent the termination or completion points of a business process
+  - Indicate the different outcomes or states that a proces can reach at its conclusion
+- Message Event : BPMN elements used to model the sending and receiving of messages between different parts of a business process or between the process and external systems
 
 ### Start Event
-- None : Process can be started manually, typically by a user or an external system
-- Message : Process automatically started by receiving a specific message.
-- Timer : Process automatically started at a specified time or after a defined duration
-- Signal : Process automatically started by receiving a specific signal
-- Conditional : Process instance starts when the specific condition evaluates to be true
+- None Start Event
+  - Process can be started manually, typically by a user or an external system
+  - Does not require any specific trigger or condition to initiate the process
+- Message Start Event 
+  - Allow the process to be started by receiving a specific message.
+  - The process instance is trigerred and executed when the designated message is received
+- Timer
+  - Allow the process to be started at a specified time or after a defined duration
+  - Allows user to schedule the process execution based on a specific time or a time interval
+- Signal 
+  - Allow the process to be started by receiving a specific signal
+  - The process instance is triggered and executed when designated signal is received
+- Conditional
+  - initiates the process based on specific condition
+  - the process instance starts when the specific condition evaluates to be true
+  - the condition can be expressed using expressions or scripting languages supported by Camunda BPM
 
 ### None/End Event
-- None : Normal termination point of the process
-- Message : send a specific message when the process reaches its completion.
-- Signal : send a specific signal when the process reaches its completion
-- Terminate : forcefully terminate the process instance when it reaches this point
-- Error : represents the termination of a process due to an error or exceptions
+- None End Event 
+  - Default end event
+  - Normal termination point of the process
+  - Indicating that the process has successfully completed
+- Message End Event 
+  - Send a specific message when the process reaches its completion
+  - Can be used to notify external systems or trigger subsequent processes
+- Signal End Event
+  - Send a specific signal when the process reaches its completion
+  - Can be used to communicate with external systems or trigger subsequent processes
+- Terminate End Event
+  - Forcefully terminate the process instance when it reaches this point
+  - Immediately ends the process execution even if there are other activities or task remaining in the process
+- Error End Event
+  - Represents the termination of a process due to an error or exceptions
+  - Allow users to handle and report errors that occur during process of execution 
+
+### Message Event
+- Start : initiates process instance when a specific message is received
+- Intermediate : a point within the process where a message is expected and received
+- End : end a process instance when a specific message is received
 
 ## Taskbar
 
@@ -52,23 +84,17 @@
 
 ## Event & Activity
 
-### Add Start Event
-- Click on start event
+### Add Object
+- Click on object
 - Context menu will open
-- Select the event shape
-- Set the start event properties
+- Select the activity shape
+- Update the name
 
 ### Change Event Name
 - Double click on event
 - A text box will open
 - Update the name in the text-box
 - `shift + Enter` to add line breaks
-
-### Add Activity
-- Click on object
-- Context menu will open
-- Select the activity shape
-- Update the name
 
 ### Change Object Type
 - Click on object
@@ -100,3 +126,4 @@
 - Script Format : Groovy
 - Script Type : Inline Script
 - Script : `println "Hello World"`
+s
