@@ -5,6 +5,24 @@
 - Camunda Platform
 - Camunda Modeler
 
+## BPM Notation
+- Start Event : BPMN elements that initiate the execution of a process instance
+- None/End Event : BPMN elements that represent the termination or completion points of a business process.
+
+### Start Event
+- None : Process can be started manually, typically by a user or an external system
+- Message : Process automatically started by receiving a specific message.
+- Timer : Process automatically started at a specified time or after a defined duration
+- Signal : Process automatically started by receiving a specific signal
+- Conditional : Process instance starts when the specific condition evaluates to be true
+
+### None/End Event
+- None : Normal termination point of the process
+- Message : send a specific message when the process reaches its completion.
+- Signal : send a specific signal when the process reaches its completion
+- Terminate : forcefully terminate the process instance when it reaches this point
+- Error : represents the termination of a process due to an error or exceptions
+
 ## Taskbar
 
 ### Run Camunda modeler
@@ -33,6 +51,12 @@
 - `Deployment succeeded` notification if deployment success
 
 ## Event & Activity
+
+### Add Start Event
+- Click on start event
+- Context menu will open
+- Select the event shape
+- Set the start event properties
 
 ### Change Event Name
 - Double click on event
