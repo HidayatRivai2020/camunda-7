@@ -6,21 +6,26 @@
 - Camunda Modeler
 
 ## BPM Notation
-- Start Event 
+- Start Events
   - BPMN elements that initiate the execution of a process instance
   - Starting point of a business process and define how the process will be triggered or activated
-- None/End Event
+- None/End Events
   - BPMN elements that represent the termination or completion points of a business process
   - Indicate the different outcomes or states that a proces can reach at its conclusion
-- Message Event : BPMN elements used to model the sending and receiving of messages between different parts of a business process or between the process and external systems
+- Message Events
+  - BPMN elements used to model the sending and receiving of messages between different parts of a business process or between the process and external systems
+  - Enable communication and coordination between process activities or participants
+- Timer Events
+  - BPMN elements used to model time-based events within a business process
+  - Enable schedule activities or actions to occur at specific points in time or after a certain duration
 
-### Start Event
-- None Start Event
+### Start Events
+- None Start Events
   - Process can be started manually, typically by a user or an external system
   - Does not require any specific trigger or condition to initiate the process
-- Message Start Event 
+- Message Start Events 
   - Allow the process to be started by receiving a specific message.
-  - The process instance is trigerred and executed when the designated message is received
+  - The process instance is triggered and executed when the designated message is received
 - Timer
   - Allow the process to be started at a specified time or after a defined duration
   - Allows user to schedule the process execution based on a specific time or a time interval
@@ -32,12 +37,12 @@
   - the process instance starts when the specific condition evaluates to be true
   - the condition can be expressed using expressions or scripting languages supported by Camunda BPM
 
-### None/End Event
-- None End Event 
-  - Default end event
+### None/End Events
+- None End Event
+  - Default end events
   - Normal termination point of the process
   - Indicating that the process has successfully completed
-- Message End Event 
+- Message End Events
   - Send a specific message when the process reaches its completion
   - Can be used to notify external systems or trigger subsequent processes
 - Signal End Event
@@ -50,10 +55,26 @@
   - Represents the termination of a process due to an error or exceptions
   - Allow users to handle and report errors that occur during process of execution 
 
-### Message Event
-- Start : initiates process instance when a specific message is received
-- Intermediate : a point within the process where a message is expected and received
-- End : end a process instance when a specific message is received
+### Message Events
+- Start Event
+  - Initiates process instance when a specific message is received
+  - Serves as the trigger for starting the process
+  - The process instance started and executed when the designated message is received
+- Intermediate Event
+  - a point within the process where a message is expected and received
+  - Can be used to trigger certain actions or to synchronize process flows based on the receipt of a specific message
+- End Event
+  - End a process instance when a specific message is received
+  - Serves as the trigger for ending process
+  - The process instance send message to receiving message event when the designed message to receiving message event
+
+### Timer Events
+- Timer Start Event
+  - Initiates a process instance at a specified time or after a defined duration
+  - Serves as the trigger for starting the process based on a timer
+- Timer Intermediate Event
+  - Represents a point within the process where a specific action or activity is triggered based on a timer.
+  - Allows to delay or schedule activities within the process
 
 ## Taskbar
 
@@ -126,4 +147,3 @@
 - Script Format : Groovy
 - Script Type : Inline Script
 - Script : `println "Hello World"`
-s
