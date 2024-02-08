@@ -1,4 +1,4 @@
-# Camunda BPMN Run
+# Camunda Platform
 
 ## Structure Files
 - camunda-h2-default : folder created after starting camunda
@@ -25,7 +25,7 @@
 - start.sh : file to start camunda for linux or mac
 
 ## Run Camunda
-- Open camunda bpmn run
+- Open camunda platform
 - Execute start.sh
 - access url : localhost:8080/
 - access default index : http://localhost:8080/camunda-welcome/index.html
