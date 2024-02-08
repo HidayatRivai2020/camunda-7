@@ -18,6 +18,10 @@
 - Timer Events
   - BPMN elements used to model time-based events within a business process
   - Enable schedule activities or actions to occur at specific points in time or after a certain duration
+- Error Events
+  - BPMN Elements used to handle and manage errors or exceptions that occir during the execution of a business process
+  - Allow to devine how errors should be caught, handled, and escalated within the process flow
+
 
 ### Start Events
 - None Start Events
@@ -75,6 +79,14 @@
 - Timer Intermediate Event
   - Represents a point within the process where a specific action or activity is triggered based on a timer.
   - Allows to delay or schedule activities within the process
+
+### Error Event
+- Error Start Event
+  - Initiates a process instance when a specific error occurs
+  - Serves as the trigger for starting the process based on an error
+- Error Intermediate Event
+  - Represents a point within the process where a specific action or activit is triggered when an error occurs.
+  - Allows to catch and handle errors at specific points in the process
 
 ## Taskbar
 
