@@ -1,11 +1,18 @@
 # Camunda Java 7.21
+- Requirement
+  - Java Runtime Environment 1.8+
+  - Camunda Platform
+  - Camunda Modeler
+- BPM Notation
+  - Events
+  - Gateways
+  - Tasks
+  - Subprocess
+  - Forms
+- Extension Reference
+- DMM Notation
 
-## Requirements
-- Java Runtime Environment 1.8+
-- Camunda Platform
-- Camunda Modeler
-
-## BPM Notation
+## Events
 - Start Events
   - BPMN elements that initiate the execution of a process instance
   - Starting point of a business process and define how the process will be triggered or activated
@@ -19,9 +26,33 @@
   - BPMN elements used to model time-based events within a business process
   - Enable schedule activities or actions to occur at specific points in time or after a certain duration
 - Error Events
-  - BPMN Elements used to handle and manage errors or exceptions that occir during the execution of a business process
-  - Allow to devine how errors should be caught, handled, and escalated within the process flow
-
+  - BPMN Elements used to handle and manage errors or exceptions that occur during the execution of a business process
+  - Allow to define how errors should be caught, handled, and escalated within the process flow
+- Escalation events
+  - Reference a named escalation
+  - Used to communicate from sub process to an upper process
+  - Non critical
+  - execution continues at the location of throwing
+- Signal Events
+  - BPMN elements used to facilitate communication and coordination between different parts of a business process or between the process and external systems
+  - Allow suer to trigger actions or synchronize process flows based on the receipt of a specific signal
+- Cancel and Compensation Events
+  - BPMN elements used to handle the cancellation or compensation of activities within a business process
+  - Provide mechanisms to undo or compensate previously executed activities when certain conditions are met
+  - Can be triggered by using appropriate BPMN elements such as service task, script task or specific conditions defined in the process flow
+- Conditional Events
+  - BPMN elements used to model events that occur based on  the evaluation of a condition
+  - Enable user to create flexible process flows where certain actions or activities are triggered or executed conditionally
+- Link Events
+  - Special case
+  - Has no special execution semantic
+  - serves as a "Go To" another point in the same process model
+  - Can use two matching links as an alternative to a sequence flow as shown in the following example 
+- Terminate Events
+  - Ends the complete scope it raised in and all contained inner scopes
+  - Useful if you have parallel token flow in a process and consume all tokens available in the same scope immediately
+  - Terminate complete instance when the event on the process instance level
+  - Terminate the current scope and all contained processes instance when the event on the subprocess level
 
 ### Start Events
 - None Start Events
@@ -80,13 +111,60 @@
   - Represents a point within the process where a specific action or activity is triggered based on a timer.
   - Allows to delay or schedule activities within the process
 
-### Error Event
+### Error Events
 - Error Start Event
   - Initiates a process instance when a specific error occurs
   - Serves as the trigger for starting the process based on an error
 - Error Intermediate Event
-  - Represents a point within the process where a specific action or activit is triggered when an error occurs.
+  - Represents a point within the process where a specific action or activity is triggered when an error occurs.
   - Allows to catch and handle errors at specific points in the process
+
+### Escalation Events
+- Escalation Start event
+  - Can only be used to trigger an event sub-process
+  - cannot be used to start a process instance
+- Escalation Boundary Event
+  - Intermediate catching escalation event on the boundary of an activity
+  - thrown within the scope of the activity on which is defined
+- Escalation Intermediate Throw Event
+  - Throw a named escalation when process executions arrives at this event
+  - Can be caught by an escalation boundary event or an event sub-process with an escalation start event which has the same or none escalation code
+- Escalation End Event
+  - End the current path of execution and throw a named escalation when process executions arrives at this event
+  - Same behavior with Escalation Intermediate throw event
+
+### Signal Events
+- Signal Start Event
+  - Initiates a process instance when a specific signal is received
+  - Serves as the trigger for starting the process based on a signal
+- Signal Intermediate Event
+  - Represents a point within the process where a specific action or activity is triggered upon receiving a signal
+  - Allows user to synchronize or control process flows based on the occurrence of a signal
+- Signal End Event
+  - Ends a process instance and send a specific signal to receiving signal
+  - It serves as the trigger fo ending the process based on signal
+
+### Cancel and Compensation Events
+- Cancel End Event
+  - Used to cancel the executions of a subprocess or activity when it is reached
+  - Terminates the associated subprocess or activity and any ongoing execution within it
+  - Can be useful for cancelling or aborting parts of process when certain conditions are met
+- Compensation Intermediate Event
+  - Used to trigger a compensation proces or activity when it is reached
+  - allows for the undoing or compensating of previously executed acitvities.
+  - the process flow moves to the corresponding compensation handler when the compensation event is triggered
+  - can perform the necessary actions to reverse or compensate for the completed activities
+
+### Conditional Events
+- Conditional Start Event
+  - Initiates process instance when a spcific condition is met
+  - Serves as the trigger for starting the process based on a condition evaluation
+- Conditional Intermediate/Boundary Event
+  - Represents a point within the process where a specific action or activity is triggered or executed when a condition is evaluated to true
+  - Allows user to control the flow of the process based on dynamic conditions
+
+
+## Gateway
 
 ## Taskbar
 

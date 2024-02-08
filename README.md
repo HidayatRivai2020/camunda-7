@@ -60,7 +60,7 @@
   - Rest API
 - Camunda BPM Standards 
   - BPMN
-    - Business Process Model and Notation)
+    - Business Process Model and Notation
     - standard for workflow and process automation
     - Processes for completely automated service orchestration and human workflow management
   - CMMN
